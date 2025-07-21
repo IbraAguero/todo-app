@@ -1,69 +1,61 @@
-# React + TypeScript + Vite
+# 📝 TODO App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una pequeña aplicación de lista de tareas hecha con **React**, **TypeScript** y **Tailwind CSS**. Permite agregar y eliminar tareas, y guarda todo en el navegador usando `localStorage`.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 💬 ¿Por qué hice esta app?
 
-## Expanding the ESLint configuration
+Este proyecto lo empecé como una forma de **volver a agarrar ritmo programando** y **reforzar conceptos básicos**. A veces uno se aleja un poco del código, y retomar con algo simple como una lista de tareas es ideal para:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Practicar `React` con `TypeScript`
+- Usar `useState` y `useEffect`
+- Trabajar con `localStorage`
+- Aplicar estilos rápidos con `Tailwind CSS`
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Mi idea es **ir agregándole funcionalidades diariamente**, para ir progresando de a poco, y mantener el hábito de escribir código todos los días.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Funcionalidades actuales
+
+- ✅ Agregar tareas
+- 🗑️ Eliminar tareas
+- 💾 Guardado automático en `localStorage`
+- 🎨 Estilos simples y modernos con Tailwind
+
+---
+
+## 🛠️ Tecnologías usadas
+
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vite](https://vitejs.dev/)
+
+---
+
+## 📦 Cómo correr el proyecto
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/tuusuario/todo-app.git
+cd todo-app
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Instalar las dependencias
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+### 3. Iniciar el servidor de desarrollo
+
+```bash
+npm run dev
+```
+
+Abrir en el navegador: http://localhost:5173
+
+Hecho con la intención de volver al código, practicar y crecer día a día. 💪
