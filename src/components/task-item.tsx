@@ -1,18 +1,18 @@
-import { useState } from "react";
 import type { Task } from "../App";
 import TrashIcon from "./trash-icon";
 
 interface Props {
   task: Task;
-  deleteTask: (id: number) => void;
+  deleteTask: (id: string) => void;
+  completedTask: (id: string, status: boolean) => void;
 }
 
-function TaskItem({ task, deleteTask }: Props) {
-  const [completed, setCompleted] = useState(false);
+function TaskItem({ task, deleteTask, completedTask }: Props) {
+  const { completed, title } = task;
 
   return (
     <div
-      onClick={() => setCompleted(!completed)}
+      onClick={() => completedTask(task._id, completed)}
       className="p-3 px-4 bg-neutral-800 rounded-lg flex items-center justify-between gap-4 cursor-pointer"
     >
       <div
@@ -27,9 +27,9 @@ function TaskItem({ task, deleteTask }: Props) {
           completed && "line-through text-neutral-600"
         }`}
       >
-        {task.title}
+        {title}
       </span>
-      <button onClick={() => deleteTask(task.id)} className="cursor-pointer">
+      <button onClick={() => deleteTask(task._id)} className="cursor-pointer">
         <TrashIcon />
       </button>
     </div>
